@@ -21,37 +21,8 @@ func main() {
 	CastInterfaceToStruct()
 
 }
-type Person1 struct {
-	Name string `json:"name" flag:"true"`
-	Age int `json:"age"`
-	LastName string `json:"last_name"`
 
-}
 
-type Person2 struct {
-	Name string `json:"name" flag:"true"`
-	Age int `json:"age"`
-}
-
-func CastInterfaceToStruct() {
-	// Create a new struct
-	person := Person1{
-		Name: "John",
-		Age: 30,
-	}
-	// Convert the person struct to an interface
-	personInterface := interface{}(person)
-	// convert person to Person2
-	newPerson, ok  := personInterface.(Person1)
-	// Convert the interface back to a struct
-	// newPerson, ok := personInterface.(Person)
-	if !ok {
-		fmt.Println("Failed to convert the interface to a struct")
-	}
-
-	fmt.Println(newPerson)
-
-}
 
 func addFlagToStruct(person Person) Person {
 		newPerson := person
