@@ -18,17 +18,7 @@ type Person struct {
 
 func main() {
 	println("Hello, World!")
-
-	// Create an example of person
-	// person := Person{
-	// 	Name: "John",
-	// 	Age: 30,
-	// 	Address: Address{
-	// 		Street: "Main Street",
-	// 		Number: 123,
-	// 	},
-	// }
-	tryCastInterfaceToStruct()
+	CastInterfaceToStruct()
 
 }
 type Person1 struct {
@@ -43,19 +33,12 @@ type Person2 struct {
 	Age int `json:"age"`
 }
 
-func tryCastInterfaceToStruct() {
+func CastInterfaceToStruct() {
 	// Create a new struct
 	person := Person1{
 		Name: "John",
 		Age: 30,
 	}
-	// person2 := Person2{
-	// 	Name: "John",
-	// 	Age: 30,
-	// }
-	// Create a new struct of the same type as the person struct
-	// newPerson := Person{}
-
 	// Convert the person struct to an interface
 	personInterface := interface{}(person)
 	// convert person to Person2
